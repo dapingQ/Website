@@ -1,0 +1,44 @@
+---
+layout: page
+category: publication
+title: Publication
+---
+
+{% assign list = [2003,2004] %}
+
+<div class="row">
+	<div class="col-sm-12 col-md-9">
+		<div class="blog-item">
+            {% for i in list %}
+            {% assign this_year = i  %}
+            <h1 class="" id="{{ item.year }}"> {{this_year}} </h1>
+            {% for paper in site.data.paper %}
+            {% if paper.year == this_year %}
+            <p class="lead">{{ paper.author}}. ({{ paper.year}}). <a href="{{paper.url}}">{{ paper.title }}. </a><strong><em>{{ paper.publisher }}</em></strong>. {{ paper.notes }}. <br>
+            {% if paper.media %}
+            <strong>Media:</strong>{% for item in paper.media %} <a href="{{ item.link }}}">{{ item.source }}</a>/{% endfor %}
+            {% endif %}
+            </p>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}    
+
+        </div><!--/.blog-item-->
+	</div>
+	<div class="col-sm-12 col-md-2 pull-right">
+        <div data-spy="affix"class="widget archieve">
+            <h3>Archieve</h3>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="blog_archieve">
+                    	{% for item in site.data.paper_year %}
+                        <li><a href="#{{item.year}}"><i class="fa fa-angle-double-right"></i> {{item.year}} <span class="pull-right">(08)</a></li>                        
+                    	{% endfor %}
+                    </ul>
+                </div>
+            </div>                     
+        </div><!--/.archieve-->
+	</div>
+
+
+</div>

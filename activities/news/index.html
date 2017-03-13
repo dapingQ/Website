@@ -1,0 +1,105 @@
+---
+layout: page
+category: activities
+title: News
+---
+
+<div class="blog">
+    <div class="row">
+         <div class="col-md-8">
+            <div class="blog-item">
+                {% for post in paginator.posts %}
+                <div class="row wow fadeInDown">
+                    <div class="col-xs-12 col-sm-2 text-center">
+                        <div class="entry-meta">
+                            <span id="publish_date">{{ post.date | date: "%b %d" }}<br>{{ post.date | date: "%Y" }}</span>
+                        </div>
+                    </div>
+                        
+                    <div class="col-xs-12 col-sm-10 blog-content">
+                        <h2><a href="{{site.url}}/{{post.url}}">{{ post.title }}</a></h2>
+                        <h3>{{ post.excerpt}}</h3>
+
+                    </div>
+                </div>    
+                {% endfor %}
+            </div><!--/.blog-item-->
+
+            <ul class="pagination pagination-lg center-block">
+                
+                {% if paginator.total_pages > 1 %}
+
+                <li><a href="{% if paginator.previous_page %}{{ paginator.previous_page_path }}{% endif %}"><i class="fa fa-long-arrow-left"></i></a></li>
+                
+                {% for page in (1..paginator.total_pages) %}             
+                {% if page == paginator.page %}
+                <li class="active"><a href="">{{ page }}</a></li>
+                {% elsif page ==1 %}
+                <li><a href="{{ paginator.previous_page_path }}">{{ page }}</a></li>                
+                {% else %}
+                <li><a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+                {% endfor %}
+
+                <li><a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% endif %}"><i class="fa fa-long-arrow-right"></i></a></li>
+
+                {% else %}
+
+                <li><a href=""><i class="fa fa-long-arrow-left"></i></a></li>
+                <li class="active"><a href="">1</a></li>
+                <li><a href=""><i class="fa fa-long-arrow-right"></i></a></li>
+
+                {% endif %}
+            </ul><!--/.pagination-->
+        </div><!--/.col-md-8-->
+
+        <aside class="col-md-4">
+            <div class="widget search">
+                <form role="form">
+                        <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                </form>
+            </div><!--/.search-->
+            
+
+{% capture site_tags %}
+{% for tag in site.tags %}
+{{ tag | first }}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+{% endcapture %}
+
+{% assign tags_list = site_tags | split:',' | sort %}
+
+
+            <div class="widget categories">
+                <h3>Categories</h3>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="blog_category">
+                          	{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    						{% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+                            <li><a href="#">{{ this_word }} <span class="badge">{{ site.tags[this_word].size }}</span></a></li>
+                            {% endunless %}{% endfor %}
+
+                        </ul>
+                    </div>
+                </div>                     
+            </div><!--/.categories-->
+            
+            <!--div class="widget archieve">
+                <h3>Archieve</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="blog_archieve">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+                        </ul>
+                    </div>
+                </div>                     
+            </div--><!--/.archieve-->
+
+        </aside>  
+    </div><!--/.row-->
+</div>

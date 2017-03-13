@@ -1,0 +1,38 @@
+---
+layout: page
+category: publication
+title: Publication
+---
+<div class="blog">
+    <div class="row">
+        <div class="col-sm-12 col-md-9">
+            <div class="blog-item">
+                {% for item in site.data.paper_year %}
+                <h2 class="" id="{{ item.year }}"> {{ item.year }} </h2>
+                {% for paper in item.publication %}
+                <p class="lead">{{ paper.author }}. ({{ item.year}}). <a href="{{paper.url}}">{{ paper.title }}. </a><strong><em>{{ paper.publisher }}</em></strong>. {{ paper.notes }}. <br>
+                {% if paper.media %}
+                <strong>Media:</strong>{% for item in paper.media %} <a href="{{ item.link }}}">{{ item.source }}</a>{% unless forloop.last %}/{% endunless %}{% endfor %}
+                {% endif %}
+                </p>
+                {% endfor %}
+                {% endfor %}
+
+            </div><!--/.blog-item-->
+        </div>
+        <aside class="col-sm-12 col-md-2 pull-right">
+            <div class="widget archieve">
+                <h3>Archieve</h3>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="blog_archieve">
+                            {% for item in site.data.paper_year %}
+                            <li><a href="#{{item.year}}"><i class="fa fa-angle-double-right"></i> {{item.year}} <span class="pull-right">({{ item.publication.size }})</a></li>                        
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>                     
+            </div><!--/.archieve-->
+        </aside>
+    </div>    
+</div>

@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section>
+    <div class="container">
+		<div class="wow fadeInDown blog">
+   			<div class="center">
+   			<h2>{{ page.title }}</h2>
+   			</div>
+			<div class="row" ></div>
+			<div class="single-profile-top col-md-3" data-wow-duration="1000ms" data-wow-delay="300ms">
+				<div class="media center">
+					<div>
+						<a href="{{ member.url }}"><img class="media-object-sm" src="{{ site.url }}/images/members/{{ page.pic }}" alt="" height="200px"></a>
+					</div>
+					<div class="media-body">
+						<h4>{{ page.lecturer }}</h4><em>from {{ page.institude }}</em> 
+						<ul class="tag clearfix">
+							<li class="btn"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{ page.date | date_to_string }}, {{ page.time }} </li>
+							<li class="btn"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> {{ page.location  }}</li>
+						</ul>
+						
+						<!--ul class="social_icons">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li> 
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						</ul-->
+					</div>
+				</div><!--/.media -->
+			</div>
+
+			<div class="col-md-8 pull-right">{{ content }}</div>
+			</div>
+		</div>
+	</div>
+</section>
