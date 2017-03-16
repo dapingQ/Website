@@ -1,20 +1,23 @@
 - picture: home-pic1.png
-  first: true
+  count: 1 
   url: 
   caption1: Mechanism of allosteric activation of SAMHD1 dNTPase
   caption2: nature structural & molecular biology 20:1304-1309 (2013).
 
 - picture: home-pic2.png
+  count: 2
   url: 
   caption1: Crystal structures of SAMHD1c tetramer in complex with GTP and a dNTP of any type
   caption2: Journal of Biological Chemistry  290(44):26352-9 (2015).
 
 - picture: home-pic3.png
+  count: 2 
   url: 
   caption1: Crystal structure of SAMHD1 T592E
   caption2: Nature Medicine 22(10):1072-4 (2016)
 
 - picture: home-pic4.png
+  count: 2 
   url:
   caption1: A.Structure of ZIKV helicase in complex with ATP/Mn2+ B.Structure of ZIKV helicase in complex with RNA
   caption2: Protein & Cell.;7(8):562-570. (2016)
