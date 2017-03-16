@@ -1,20 +1,6 @@
-- name: John
-  picture: john.jpg
-  title: Post Doctor
-  email: john@123.com
-  url: #
-  research: R1
-
-- name: John
-  picture: john.jpg
-  title: Post Doctor
-  email: john@123.com
-  url: #
-  research: R1
-
-- name: John
-  picture: john.jpg
-  title: Post Doctor
-  email: john@123.com
-  url: #
-  research: R1
+- name: Peng Wang
+  picture: Peng-Wang.png
+  title: B.Sc
+  email: mf1630012@smail.nju.edu.cn 
+  url: 
+  research: 

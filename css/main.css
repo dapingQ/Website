@@ -379,11 +379,12 @@ input.search-form:hover {
 }
 
 #main-slider .carousel .carousel-content {
-  margin-top: 150px;
+  margin-top: 100px;
+  height: 400px;
 }
 
 #main-slider .carousel .slide-margin{
-  margin-top: 450px;
+  margin-top: 0px;
 }
 
 #main-slider .carousel h2 {
@@ -408,14 +409,13 @@ input.search-form:hover {
 #main-slider .carousel .item {
   background-position: 50%;
   background-repeat: no-repeat;
-  background-size: cover;
   left: 0 !important;
   opacity: 0;
   top: 0;
   position: absolute;
   width: 100%;
   display: block !important;
-  height: 730px;
+  height: 400px;
   -webkit-transition: opacity ease-in-out 500ms;
   -moz-transition: opacity ease-in-out 500ms;
   -o-transition: opacity ease-in-out 500ms;
@@ -440,7 +440,7 @@ input.search-form:hover {
 #main-slider .next {
   position: absolute;
   top: 50%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(8, 8, 8, 0.1);
   color: #fff;
   display: inline-block;
   margin-top: -25px;
@@ -455,7 +455,7 @@ input.search-form:hover {
 
 #main-slider .prev:hover,
 #main-slider .next:hover {
-  background-color: #000;
+  background-color: rgba(8, 8, 8, 0.2);
 }
 
 #main-slider .prev {

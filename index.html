@@ -15,33 +15,25 @@ category: home
                 <div class="item active" style="background-image: url({{ site.url  }}/images/slider/1.jpg)">
                     <div class="container">
                         <div class="row slide-margin">
-                            <div class="col-sm-12">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1 text-center">{{ silder.caption1 }}</h1>
-                                    <h2 class="animation animated-item-2 text-center    ">{{ silder.caption2 }}</h2>
-                                    <!--a class="btn-slide animation animated-item-3" href="{{ silder.url }}"> Read More</a-->
-                                </div>
-                            </div>
 
-                            <!--div class="col-sm-6 hidden-xs animation animated-item-4">
-                                <div class="slider-img">
-                                    <img src="images/slider/img1.png" class="img-responsive">
-                                </div>
-                            </div-->
                         </div>
                     </div>
                 </div><!--/.item-->
 
                 {% for silder in site.data.sliders %} 
-                <div class="item" style="background-image: url({{ site.url  }}/images/slider/{{ silder.picture }})">
+                {% if slider.first ==true %}
+                <div class="item" >
                     <div class="container">
                         <div class="row slide-margin">
-                            <div class="col-sm-12">
-                                <div class="carousel-content">
-                                    <h1 class="animation animated-item-1 text-center">{{ silder.caption1 }}</h1>
-                                    <h2 class="animation animated-item-2 text-center    ">{{ silder.caption2 }}</h2>
+                        	<div class="col-sm-8 pull-left">
+                        		<img src="{{ site.url  }}/images/slider/{{ silder.picture }}" width="700px" height="400px">
+                        	</div>
+                            <div class="col-sm-4 pull-right" style="background-color: rgba(85, 85, 85, 0.9);">
+                                <div class="carousel-content" style="">
+                                    <h1 style="color: #eee" class="animation animated-item-1 text-center">{{ silder.caption1 }}</h1>
+                                    <h2 style="color: #eee" class="animation animated-item-2 text-center    ">{{ silder.caption2 }}</h2>
                                     <!--a class="btn-slide animation animated-item-3" href="{{ silder.url }}"> Read More</a-->
-                                </div>
+                                </div>                            	
                             </div>
 
                             <!--div class="col-sm-6 hidden-xs animation animated-item-4">
@@ -52,6 +44,30 @@ category: home
                         </div>
                     </div>
                 </div><!--/.item-->
+                {% else %}
+                <div class="item" >
+                    <div class="container">
+                        <div class="row slide-margin">
+                        	<div class="col-sm-8 pull-left">
+                        		<img src="{{ site.url  }}/images/slider/{{ silder.picture }}" width="700px" height="400px">
+                        	</div>
+                            <div class="col-sm-4 pull-right" style="background-color: rgba(85, 85, 85, 0.9);">
+                                <div class="carousel-content" style="">
+                                    <h1 style="color: #eee" class="animation animated-item-1 text-center">{{ silder.caption1 }}</h1>
+                                    <h2 style="color: #eee" class="animation animated-item-2 text-center    ">{{ silder.caption2 }}</h2>
+                                    <!--a class="btn-slide animation animated-item-3" href="{{ silder.url }}"> Read More</a-->
+                                </div>                            	
+                            </div>
+
+                            <!--div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    <img src="images/slider/img1.png" class="img-responsive">
+                                </div>
+                            </div-->
+                        </div>
+                    </div>
+                </div><!--/.item-->
+                {% endif %}
                 {% endfor %}
 
             </div><!--/.carousel-inner-->
